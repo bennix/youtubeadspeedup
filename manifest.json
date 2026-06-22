@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Ad Speedup",
+  "description": "Speed up YouTube ads while keeping normal videos at 1x.",
+  "version": "1.0.0",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_title": "YouTube Ad Speedup",
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
